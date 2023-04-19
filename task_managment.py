@@ -10,14 +10,19 @@ appointments = pd.DataFrame(
 
 def add_task(task_id, task_name, due_date):
     global tasks
-    tasks = tasks.append({'task_id': task_id, 'task_name': task_name,
-                         'due_date': due_date, 'status': 'pending'}, ignore_index=True)
+    new_task = pd.DataFrame({'task_id': [task_id], 'task_name': [task_name],
+                             'due_date': [due_date], 'status': ['pending']})
+    tasks = pd.concat([tasks, new_task], ignore_index=True)
 
 
 def add_appointment(appointment_id, property_id, date_time):
     global appointments
-    appointments = appointments.append({'appointment_id': appointment_id, 'property_id': property_id,
-                                       'date_time': date_time, 'status': 'upcoming'}, ignore_index=True)
+    new_appointment = pd.DataFrame({'appointment_id': [appointment_id], 'property_id': [property_id],
+                                    'date_time': [date_time], 'status': ['upcoming']})
+    appointments = pd.concat(
+        [appointments, new_appointment], ignore_index=True)
+
+# Rest of the code remains the same
 
 
 def update_task_status(task_id, status):
@@ -68,6 +73,10 @@ if __name__ == "__main__":
     # Schedule the check_pending_tasks and check_upcoming_appointments functions to run every minute
     schedule.every(1).minutes.do(check_pending_tasks)
     schedule.every(1).minutes.do(check_upcoming_appointments)
+
+    # Show pending tasks and upcoming appointments
+    show_pending_tasks()
+    show_upcoming_appointments()
 
     while True:
         schedule.run_pending()
