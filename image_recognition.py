@@ -29,7 +29,7 @@ def recognize_image(model, labels, image_path):
 model, labels = load_model_and_labels()
 
 # Image path
-image_path = 'path/to/your/image.jpg'
+image_path = "/mnt/c/Users/phill/Desktop/dev/JWB_0962.jpg"
 
 # Perform image recognition
 label, confidence = recognize_image(model, labels, image_path)
