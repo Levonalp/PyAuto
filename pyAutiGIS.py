@@ -25,7 +25,7 @@ def style_function(feature):
     }
 
 
-# Add property boundaries to the map
+# Add property boundaries to the maps
 folium.GeoJson(
     property_data,
     name='Property Boundaries',
