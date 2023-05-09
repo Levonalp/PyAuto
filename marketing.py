@@ -13,7 +13,7 @@ def send_email(subject, body, to_email, from_email, from_email_password):
         print("Error sending email:", e)
 
 
-# variables
+# variables to pass to send_email function
 subject = "Newsletter: Real Estate Market Update"
 body = "Hello! Here's the latest news on the real estate market..."
 to_email = "recipient@example.com"
