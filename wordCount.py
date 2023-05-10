@@ -1,5 +1,6 @@
 def count_words(sentence):
     words = sentence.split()
+  # print words
     num_words = len(words)
     return num_words
 
