@@ -26,6 +26,8 @@ def get_crypto_price(symbol):
     response_json = response.json()
     return response_json[symbol]['usd']
 
+# Configure email settings
+
 
 def send_email(subject, body):
     msg = EmailMessage()
