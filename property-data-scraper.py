@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
+# Set the URLs to scrape
+
 
 def fetch_property_data(url):
     response = requests.get(url)
@@ -16,18 +18,22 @@ def fetch_property_data(url):
     }
 
     return property_data
+# Set the URLs to scrape
+
 
 def collect_property_data(urls):
     property_data_list = []
-    
+
     for url in urls:
         property_data = fetch_property_data(url)
         property_data_list.append(property_data)
-    
+
     property_data_df = pd.DataFrame(property_data_list)
-    
+
     return property_data_df
 
+
+ # Set the URLs to scrape
 if __name__ == "__main__":
     property_urls = [
         'https://www.example.com/property/123',
