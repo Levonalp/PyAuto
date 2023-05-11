@@ -37,6 +37,8 @@ def analyze_sentiment(tweets):
 
     return sentiment
 
+# Set up Jinja2 template
+
 
 def generate_report(brand, sentiment, template='report.html'):
     env = Environment(loader=FileSystemLoader('.'))
@@ -44,6 +46,8 @@ def generate_report(brand, sentiment, template='report.html'):
 
     with open(f"{brand}_report.html", 'w') as f:
         f.write(template.render(brand=brand, sentiment=sentiment))
+
+# Set up Twitter API credentials and Tweepy
 
 
 def main():

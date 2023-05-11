@@ -13,6 +13,7 @@ while True:
         if computer == "Paper":
             print("You lose!", computer, "covers", player)
             cpu_score += 1
+            # f string is used to print the score in the output statement
         else:
             print("You win!", player, "smashes", computer)
             player_score += 1
