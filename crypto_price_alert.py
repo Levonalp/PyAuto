@@ -41,7 +41,7 @@ def send_email(subject, body):
     server.send_message(msg)
     server.quit()
 
-
+# Configure email settings and send initial email 
 while True:
     try:
         current_price = get_crypto_price(crypto_symbol)
