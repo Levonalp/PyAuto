@@ -20,7 +20,7 @@ post_time = datetime.now() + timedelta(hours=1)
 # Content to post
 content = "This is a scheduled post!"
 
-# Function to post a tweet
+# Function to post a tweet and print a message
 
 
 def post_tweet(content):
@@ -37,11 +37,11 @@ def get_tweet_metrics(tweet_id):
     print(f"Retweets: {retweets}, Favorites: {favorites}")
 
 
-# Main loop
+# Main loop to check if it's time to post
 while True:
     if datetime.now() >= post_time:
         tweet = post_tweet(content)
         time.sleep(60)  # Wait for 1 minute
         get_tweet_metrics(tweet.id)
         break
-    time.sleep(60)  # Check every minute
+    time.sleep(60)  # Check every minute if it's time to post
