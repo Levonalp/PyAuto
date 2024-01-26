@@ -39,3 +39,4 @@ try:
     print(f"Email sent to {recipient_email}")
 except Exception as e:
     print(f"Error occurred: {e}")
+
